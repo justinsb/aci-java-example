@@ -22,11 +22,12 @@
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.2.7-SNAPSHOT</version>
         <configuration>
-          <imageName>example</imageName>
+          <imageName>aci.justinsb.com/java-aci-example1</imageName>
           <baseImage>java</baseImage>
           <format>rocket</format>
           <pushImage>true</pushImage>
-          <repository>s3://justinsb-aci</repository>
+          <signImage>true</signImage>
+          <repository>s3://aci.justinsb.com</repository>
           <entryPoint>["/java", "-cp", "/${project.build.finalName}.jar", "com.mycompany.app.App"]</entryPoint>
           <!-- copy the service's jar file from target into the root directory of the image -->
           <resources>
